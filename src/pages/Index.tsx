@@ -116,7 +116,15 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-black flex flex-col items-center justify-center p-4">
+    <div 
+      className="min-h-screen flex flex-col items-center justify-center p-4"
+      style={{
+        backgroundImage: 'url(/lovable-uploads/ee037832-fb9b-4e90-bdcd-5c0eb9cd5b6c.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="w-full max-w-lg space-y-6">
         {/* Header */}
         <div className="text-center space-y-3 mb-12">

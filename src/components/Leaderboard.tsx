@@ -37,7 +37,15 @@ const Leaderboard = ({ userName, userRank, referralCount, email }: LeaderboardPr
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-black p-4">
+    <div 
+      className="min-h-screen p-4"
+      style={{
+        backgroundImage: 'url(/lovable-uploads/ee037832-fb9b-4e90-bdcd-5c0eb9cd5b6c.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="max-w-4xl mx-auto space-y-6">
         {/* User Profile Card */}
         <div className="bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 p-8">
