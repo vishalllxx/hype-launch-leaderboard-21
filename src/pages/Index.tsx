@@ -15,24 +15,79 @@ const Index = () => {
   });
   const [showLeaderboard, setShowLeaderboard] = useState(false);
   const [email, setEmail] = useState("");
+  const [twitterUsername, setTwitterUsername] = useState("");
+  const [discordUsername, setDiscordUsername] = useState("");
   const [userName, setUserName] = useState("");
   const [userRank, setUserRank] = useState(1);
   const [referralCount, setReferralCount] = useState(12);
+  
+  // States to show input fields
+  const [showEmailInput, setShowEmailInput] = useState(false);
+  const [showTwitterInput, setShowTwitterInput] = useState(false);
+  const [showDiscordInput, setShowDiscordInput] = useState(false);
 
   const handleTaskComplete = (task: string) => {
-    if (task === "email" && !email) {
+    if (task === "email") {
+      setShowEmailInput(true);
+    } else if (task === "twitter") {
+      // Redirect to Twitter follow link
+      window.open("https://twitter.com/intent/follow?screen_name=neftitxyz", "_blank");
+      setShowTwitterInput(true);
+    } else if (task === "discord") {
+      // Redirect to Discord join link
+      window.open("https://discord.gg/GHc9samP", "_blank");
+      setShowDiscordInput(true);
+    }
+  };
+
+  const handleEmailSubmit = () => {
+    if (!email) {
       toast({
         title: "Email Required",
-        description: "Please enter your email address first.",
+        description: "Please enter your email address.",
         variant: "destructive",
       });
       return;
     }
-
-    setCompletedTasks(prev => ({ ...prev, [task]: true }));
+    setCompletedTasks(prev => ({ ...prev, email: true }));
+    setShowEmailInput(false);
     toast({
-      title: "Task Completed!",
-      description: `${task.charAt(0).toUpperCase() + task.slice(1)} task completed successfully.`,
+      title: "Email Submitted!",
+      description: "Email task completed successfully.",
+    });
+  };
+
+  const handleTwitterSubmit = () => {
+    if (!twitterUsername) {
+      toast({
+        title: "Username Required",
+        description: "Please enter your Twitter username.",
+        variant: "destructive",
+      });
+      return;
+    }
+    setCompletedTasks(prev => ({ ...prev, twitter: true }));
+    setShowTwitterInput(false);
+    toast({
+      title: "Twitter Task Completed!",
+      description: "Twitter task completed successfully.",
+    });
+  };
+
+  const handleDiscordSubmit = () => {
+    if (!discordUsername) {
+      toast({
+        title: "Username Required",
+        description: "Please enter your Discord username.",
+        variant: "destructive",
+      });
+      return;
+    }
+    setCompletedTasks(prev => ({ ...prev, discord: true }));
+    setShowDiscordInput(false);
+    toast({
+      title: "Discord Task Completed!",
+      description: "Discord task completed successfully.",
     });
   };
 
@@ -84,6 +139,25 @@ const Index = () => {
             bgColor="bg-purple-600"
           />
 
+          {/* Email Input Field */}
+          {showEmailInput && (
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-4">
+              <Input
+                type="email"
+                placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 rounded-xl"
+              />
+              <Button
+                onClick={handleEmailSubmit}
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 rounded-xl font-bold"
+              >
+                Submit Email
+              </Button>
+            </div>
+          )}
+
           <WaitlistCard
             icon={
               <svg className="h-7 w-7 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -97,6 +171,25 @@ const Index = () => {
             bgColor="bg-purple-600"
           />
 
+          {/* Twitter Input Field */}
+          {showTwitterInput && (
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-4">
+              <Input
+                type="text"
+                placeholder="Enter your Twitter username"
+                value={twitterUsername}
+                onChange={(e) => setTwitterUsername(e.target.value)}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 rounded-xl"
+              />
+              <Button
+                onClick={handleTwitterSubmit}
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 rounded-xl font-bold"
+              >
+                Submit Twitter Username
+              </Button>
+            </div>
+          )}
+
           <WaitlistCard
             icon={
               <svg className="h-7 w-7 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -109,6 +202,25 @@ const Index = () => {
             onComplete={() => handleTaskComplete("discord")}
             bgColor="bg-purple-600"
           />
+
+          {/* Discord Input Field */}
+          {showDiscordInput && (
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-4">
+              <Input
+                type="text"
+                placeholder="Enter your Discord username"
+                value={discordUsername}
+                onChange={(e) => setDiscordUsername(e.target.value)}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 rounded-xl"
+              />
+              <Button
+                onClick={handleDiscordSubmit}
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 rounded-xl font-bold"
+              >
+                Submit Discord Username
+              </Button>
+            </div>
+          )}
         </div>
 
         {/* Enter Button */}
