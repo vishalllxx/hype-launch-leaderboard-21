@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Trophy, Copy, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -37,7 +36,7 @@ const Leaderboard = ({ userName, userRank, referralCount, email }: LeaderboardPr
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-900 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-black p-4">
       <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
         {/* User Profile Card */}
         <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-6">

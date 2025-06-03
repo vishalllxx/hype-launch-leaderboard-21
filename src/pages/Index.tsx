@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Mail, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -61,7 +60,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-900 flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-black flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-md space-y-8 animate-fade-in">
         {/* Header */}
         <div className="text-center space-y-4">
