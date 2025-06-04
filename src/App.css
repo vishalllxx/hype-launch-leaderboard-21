@@ -1,5 +1,4 @@
 
-
 * {
   box-sizing: border-box;
 }
@@ -65,7 +64,7 @@ html, body {
   }
 }
 
-/* Improved desktop responsiveness */
+/* Desktop specific improvements */
 @media screen and (min-width: 1024px) {
   body {
     background-attachment: fixed;
@@ -75,44 +74,12 @@ html, body {
   .min-h-screen {
     min-height: 100vh;
   }
-  
-  /* Better content spacing on larger screens */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
 }
 
-/* Enhanced background image handling for larger screens */
+/* Fix for background image on larger screens */
 @media screen and (min-width: 1200px) {
   [style*="background-image"] {
     background-size: cover !important;
     background-position: center center !important;
-    background-attachment: fixed !important;
-  }
-}
-
-/* Specific improvements for 1920px and larger screens */
-@media screen and (min-width: 1920px) {
-  .container {
-    max-width: 1400px;
-  }
-  
-  /* Ensure content scales properly on very large screens */
-  [style*="background-image"] {
-    background-size: 100% 100% !important;
-  }
-}
-
-/* Fix for common desktop resolutions */
-@media screen and (min-width: 1366px) and (max-width: 1920px) {
-  .min-h-screen {
-    min-height: 100vh;
-  }
-  
-  /* Better scaling for common laptop/desktop sizes */
-  [style*="background-image"] {
-    background-size: cover !important;
-    background-position: center !important;
   }
 }
