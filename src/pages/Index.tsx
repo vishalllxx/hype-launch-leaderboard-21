@@ -152,7 +152,7 @@ const Index = () => {
         <div className="w-full max-w-md space-y-4 relative z-10">
           {/* Header */}
           <div className="text-center space-y-1 mb-6">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-wider">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-wider md:text-5xl text-center">
               JOIN THE WAITLIST
             </h1>
             <p className="text-lg sm:text-xl text-white/90 font-medium">
