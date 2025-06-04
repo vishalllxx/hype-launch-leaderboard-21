@@ -43,7 +43,7 @@ const Leaderboard = ({ userName, userRank, referralCount, email }: LeaderboardPr
       <MainNav />
       
       <div 
-        className="flex-1 flex flex-col items-center justify-center p-3 pt-16 sm:pt-20 relative"
+        className="flex-1 flex flex-col items-center justify-center p-3 pt-16 sm:pt-20 lg:pt-24 relative"
         style={{
           backgroundImage: 'url(/lovable-uploads/1161bd19-0bbb-4e19-ab51-1f508be196c9.png)',
           backgroundSize: 'cover',
@@ -54,7 +54,7 @@ const Leaderboard = ({ userName, userRank, referralCount, email }: LeaderboardPr
         {/* Background overlay for better readability */}
         <div className="absolute inset-0 bg-black/20"></div>
         
-        <div className="w-full max-w-2xl space-y-4 relative z-10">
+        <div className="w-full max-w-2xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto space-y-4 relative z-10 px-4">
           {/* User Profile Card */}
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6">
             <div className="flex items-center justify-between">
