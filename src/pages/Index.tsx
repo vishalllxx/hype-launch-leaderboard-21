@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Mail, Twitter, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -170,27 +171,20 @@ const Index = () => {
 
           {/* Email Input Field */}
           {showEmailInput && (
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-4 relative">
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-silver/80 via-silver/40 to-silver/80 animate-spin pointer-events-none" style={{
-                background: 'conic-gradient(from 0deg, rgba(192,192,192,0.8), rgba(192,192,192,0.4), rgba(192,192,192,0.8), rgba(192,192,192,0.4))',
-                borderRadius: '1rem',
-                padding: '2px'
-              }}></div>
-              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 space-y-4">
-                <Input
-                  type="email"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 rounded-xl"
-                />
-                <Button
-                  onClick={handleEmailSubmit}
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 rounded-xl font-bold"
-                >
-                  Submit Email
-                </Button>
-              </div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-4">
+              <Input
+                type="email"
+                placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 rounded-xl"
+              />
+              <Button
+                onClick={handleEmailSubmit}
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 rounded-xl font-bold"
+              >
+                Submit Email
+              </Button>
             </div>
           )}
 
@@ -205,27 +199,20 @@ const Index = () => {
 
           {/* Wallet Input Field */}
           {showWalletInput && (
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-4 relative">
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-silver/80 via-silver/40 to-silver/80 animate-spin pointer-events-none" style={{
-                background: 'conic-gradient(from 0deg, rgba(192,192,192,0.8), rgba(192,192,192,0.4), rgba(192,192,192,0.8), rgba(192,192,192,0.4))',
-                borderRadius: '1rem',
-                padding: '2px'
-              }}></div>
-              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 space-y-4">
-                <Input
-                  type="text"
-                  placeholder="Enter your EVM wallet address"
-                  value={walletAddress}
-                  onChange={(e) => setWalletAddress(e.target.value)}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 rounded-xl"
-                />
-                <Button
-                  onClick={handleWalletSubmit}
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 rounded-xl font-bold"
-                >
-                  Submit Wallet Address
-                </Button>
-              </div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-4">
+              <Input
+                type="text"
+                placeholder="Enter your EVM wallet address"
+                value={walletAddress}
+                onChange={(e) => setWalletAddress(e.target.value)}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 rounded-xl"
+              />
+              <Button
+                onClick={handleWalletSubmit}
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 rounded-xl font-bold"
+              >
+                Submit Wallet Address
+              </Button>
             </div>
           )}
 
@@ -244,27 +231,20 @@ const Index = () => {
 
           {/* Twitter Input Field */}
           {showTwitterInput && (
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-4 relative">
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-silver/80 via-silver/40 to-silver/80 animate-spin pointer-events-none" style={{
-                background: 'conic-gradient(from 0deg, rgba(192,192,192,0.8), rgba(192,192,192,0.4), rgba(192,192,192,0.8), rgba(192,192,192,0.4))',
-                borderRadius: '1rem',
-                padding: '2px'
-              }}></div>
-              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 space-y-4">
-                <Input
-                  type="text"
-                  placeholder="Enter your Twitter username"
-                  value={twitterUsername}
-                  onChange={(e) => setTwitterUsername(e.target.value)}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 rounded-xl"
-                />
-                <Button
-                  onClick={handleTwitterSubmit}
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 rounded-xl font-bold"
-                >
-                  Submit Twitter Username
-                </Button>
-              </div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-4">
+              <Input
+                type="text"
+                placeholder="Enter your Twitter username"
+                value={twitterUsername}
+                onChange={(e) => setTwitterUsername(e.target.value)}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 rounded-xl"
+              />
+              <Button
+                onClick={handleTwitterSubmit}
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 rounded-xl font-bold"
+              >
+                Submit Twitter Username
+              </Button>
             </div>
           )}
 
@@ -283,27 +263,20 @@ const Index = () => {
 
           {/* Discord Input Field */}
           {showDiscordInput && (
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-4 relative">
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-silver/80 via-silver/40 to-silver/80 animate-spin pointer-events-none" style={{
-                background: 'conic-gradient(from 0deg, rgba(192,192,192,0.8), rgba(192,192,192,0.4), rgba(192,192,192,0.8), rgba(192,192,192,0.4))',
-                borderRadius: '1rem',
-                padding: '2px'
-              }}></div>
-              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 space-y-4">
-                <Input
-                  type="text"
-                  placeholder="Enter your Discord username"
-                  value={discordUsername}
-                  onChange={(e) => setDiscordUsername(e.target.value)}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 rounded-xl"
-                />
-                <Button
-                  onClick={handleDiscordSubmit}
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 rounded-xl font-bold"
-                >
-                  Submit Discord Username
-                </Button>
-              </div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-4">
+              <Input
+                type="text"
+                placeholder="Enter your Discord username"
+                value={discordUsername}
+                onChange={(e) => setDiscordUsername(e.target.value)}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 rounded-xl"
+              />
+              <Button
+                onClick={handleDiscordSubmit}
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 rounded-xl font-bold"
+              >
+                Submit Discord Username
+              </Button>
             </div>
           )}
         </div>
