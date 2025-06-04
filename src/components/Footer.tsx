@@ -26,30 +26,30 @@ const Footer = () => {
 
   return (
     <footer className="relative backdrop-blur-sm border-t border-white/10 mt-auto">
-      <div className="max-w-6xl mx-auto px-4 py-8 bg-black">
-        <div className="grid md:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto px-3 py-4 bg-black">
+        <div className="grid md:grid-cols-3 gap-4">
           {/* NEFTIT Section */}
           <div>
-            <h3 className="text-white text-lg font-bold mb-3">NEFTIT</h3>
-            <p className="text-white/70 text-sm leading-relaxed">
+            <h3 className="text-white text-sm font-bold mb-2">NEFTIT</h3>
+            <p className="text-white/70 text-xs leading-relaxed">
               NEFTIT is a Web3 engagement platform designed to empower NFT projects and communities through gamified interactions.
             </p>
           </div>
 
           {/* Newsletter Section */}
           <div>
-            <h3 className="text-white text-lg font-bold mb-3">GET NEFTIT UPDATES IN YOUR INBOX</h3>
+            <h3 className="text-white text-sm font-bold mb-2">GET NEFTIT UPDATES</h3>
             <form onSubmit={handleSubmit} className="flex gap-2">
               <Input
                 type="email"
                 placeholder="Your email..."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-10 rounded-lg flex-1 text-sm"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-8 rounded-md flex-1 text-xs"
               />
               <Button
                 type="submit"
-                className="bg-cyan-500 hover:bg-cyan-600 text-white h-10 px-4 rounded-lg font-bold text-sm"
+                className="bg-cyan-500 hover:bg-cyan-600 text-white h-8 px-3 rounded-md font-bold text-xs"
               >
                 SUBMIT
               </Button>
@@ -58,15 +58,15 @@ const Footer = () => {
 
           {/* Social Section */}
           <div>
-            <h3 className="text-white text-lg font-bold mb-3">SOCIAL</h3>
-            <div className="space-y-2">
-              <a href="https://twitter.com/neftitxyz" target="_blank" rel="noopener noreferrer" className="flex items-center text-white/70 hover:text-white transition-colors text-sm">
+            <h3 className="text-white text-sm font-bold mb-2">SOCIAL</h3>
+            <div className="space-y-1">
+              <a href="https://twitter.com/neftitxyz" target="_blank" rel="noopener noreferrer" className="flex items-center text-white/70 hover:text-white transition-colors text-xs">
                 TWITTER →
               </a>
-              <a href="https://discord.gg/GHc9samP" target="_blank" rel="noopener noreferrer" className="flex items-center text-white/70 hover:text-white transition-colors text-sm">
+              <a href="https://discord.gg/GHc9samP" target="_blank" rel="noopener noreferrer" className="flex items-center text-white/70 hover:text-white transition-colors text-xs">
                 DISCORD →
               </a>
-              <a href="#" className="flex items-center text-white/70 hover:text-white transition-colors text-sm">
+              <a href="#" className="flex items-center text-white/70 hover:text-white transition-colors text-xs">
                 TELEGRAM →
               </a>
             </div>
@@ -74,9 +74,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/10 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-white/60 text-sm">© 2025 NEFTIT</p>
-          <div className="flex gap-4 text-sm">
+        <div className="border-t border-white/10 mt-4 pt-3 flex flex-col md:flex-row justify-between items-center gap-2">
+          <p className="text-white/60 text-xs">© 2025 NEFTIT</p>
+          <div className="flex gap-3 text-xs">
             <a href="#" className="text-white/60 hover:text-white transition-colors">
               Docs
             </a>
