@@ -25,7 +25,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-black/10 backdrop-blur-sm border-t border-white/10 mt-auto">
+    <footer className="relative backdrop-blur-sm border-t border-white/10 mt-auto">
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-12">
           {/* NEFTIT Section */}

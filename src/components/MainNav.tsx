@@ -14,8 +14,12 @@ const MainNav = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/10 backdrop-blur-sm border-b border-white/10">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-white text-2xl font-bold">
-          NEFTIT
+        <div className="flex items-center">
+          <img 
+            src="/lovable-uploads/c9853b66-e783-4b56-bc39-9fac0b2296e5.png" 
+            alt="NEFTIT" 
+            className="h-8 w-auto"
+          />
         </div>
 
         {/* Menu Dropdown */}
