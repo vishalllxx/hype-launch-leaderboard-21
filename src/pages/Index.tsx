@@ -32,9 +32,9 @@ const Index = () => {
 
   const handleTaskComplete = (task: string) => {
     if (task === "email") {
-      setShowEmailInput(true);
+      setShowEmailInput(prev => !prev);
     } else if (task === "wallet") {
-      setShowWalletInput(true);
+      setShowWalletInput(prev => !prev);
     } else if (task === "twitter") {
       // Redirect to Twitter follow link
       window.open("https://twitter.com/intent/follow?screen_name=neftitxyz", "_blank");
