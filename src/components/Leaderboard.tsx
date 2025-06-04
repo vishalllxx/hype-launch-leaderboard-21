@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Trophy, Copy, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -42,7 +43,7 @@ const Leaderboard = ({ userName, userRank, referralCount, email }: LeaderboardPr
       <MainNav />
       
       <div 
-        className="flex-1 flex flex-col items-center justify-center p-4 pt-24 relative"
+        className="flex-1 flex flex-col items-center justify-center p-3 pt-16 sm:pt-20 relative"
         style={{
           backgroundImage: 'url(/lovable-uploads/1161bd19-0bbb-4e19-ab51-1f508be196c9.png)',
           backgroundSize: 'cover',
@@ -53,16 +54,16 @@ const Leaderboard = ({ userName, userRank, referralCount, email }: LeaderboardPr
         {/* Background overlay for better readability */}
         <div className="absolute inset-0 bg-black/20"></div>
         
-        <div className="w-full max-w-4xl space-y-6 relative z-10">
+        <div className="w-full max-w-2xl space-y-4 relative z-10">
           {/* User Profile Card */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 p-8">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-4">
                 {/* Avatar */}
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-full flex items-center justify-center relative">
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-                    <div className="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-xl">
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-full flex items-center justify-center relative">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">
                         {userName.charAt(0)}
                       </span>
                     </div>
@@ -71,59 +72,59 @@ const Leaderboard = ({ userName, userRank, referralCount, email }: LeaderboardPr
 
                 {/* User Info */}
                 <div>
-                  <h2 className="text-purple-300 text-2xl font-bold mb-1">YOUR NAME HERE</h2>
-                  <p className="text-white/60 text-lg">@USERNAME</p>
+                  <h2 className="text-purple-300 text-lg font-bold mb-0.5">YOUR NAME HERE</h2>
+                  <p className="text-white/60 text-sm">@USERNAME</p>
                 </div>
               </div>
 
               {/* Rank */}
-              <div className="text-right flex items-center space-x-4">
-                <Trophy className="h-12 w-12 text-purple-400" />
+              <div className="text-right flex items-center space-x-3">
+                <Trophy className="h-8 w-8 text-purple-400" />
                 <div>
-                  <p className="text-white text-xl font-bold mb-1">YOUR RANK</p>
-                  <p className="text-white/70 text-4xl font-bold">#001</p>
+                  <p className="text-white text-sm font-bold mb-0.5">YOUR RANK</p>
+                  <p className="text-white/70 text-2xl font-bold">#001</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Referrals and Invite Section */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 p-8">
-            <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {/* Your Referrals */}
               <div>
-                <h3 className="text-white text-2xl font-bold mb-4">YOUR REFERRALS</h3>
-                <div className="mb-4">
-                  <span className="text-purple-400 text-6xl font-bold">12</span>
-                  <span className="text-white text-2xl font-bold ml-3">JOINED!</span>
+                <h3 className="text-white text-lg font-bold mb-3">YOUR REFERRALS</h3>
+                <div className="mb-3">
+                  <span className="text-purple-400 text-3xl font-bold">12</span>
+                  <span className="text-white text-lg font-bold ml-2">JOINED!</span>
                 </div>
-                <p className="text-white/70 text-lg">INVITE MORE FRIENDS TO CLIMB ON TOP</p>
+                <p className="text-white/70 text-sm">INVITE MORE FRIENDS TO CLIMB ON TOP</p>
               </div>
 
               {/* Invite Friends */}
               <div>
-                <h3 className="text-white text-2xl font-bold mb-6">INVITE YOUR FRIENDS</h3>
-                <div className="space-y-4">
+                <h3 className="text-white text-lg font-bold mb-4">INVITE YOUR FRIENDS</h3>
+                <div className="space-y-3">
                   <Input
                     value={referralLink}
                     readOnly
-                    className="bg-white/10 border-white/20 text-white h-14 rounded-2xl text-lg px-4"
+                    className="bg-white/10 border-white/20 text-white h-10 rounded-xl text-sm px-3"
                   />
-                  <div className="flex space-x-3">
+                  <div className="flex space-x-2">
                     <Button
                       onClick={handleShareTwitter}
-                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white h-14 rounded-2xl font-bold text-base"
+                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white h-10 rounded-xl font-bold text-sm"
                     >
-                      <Twitter className="h-5 w-5 mr-2" />
-                      SHARE ON TWITTER
+                      <Twitter className="h-4 w-4 mr-1" />
+                      SHARE
                     </Button>
                     <Button
                       onClick={handleCopyLink}
                       variant="outline"
-                      className="bg-white/10 border-white/20 text-white hover:bg-white/20 h-14 rounded-2xl px-6 font-bold"
+                      className="bg-white/10 border-white/20 text-white hover:bg-white/20 h-10 rounded-xl px-4 font-bold text-sm"
                     >
-                      <Copy className="h-5 w-5 mr-2" />
-                      COPY LINK
+                      <Copy className="h-4 w-4 mr-1" />
+                      COPY
                     </Button>
                   </div>
                 </div>
@@ -132,23 +133,23 @@ const Leaderboard = ({ userName, userRank, referralCount, email }: LeaderboardPr
           </div>
 
           {/* Leaderboard */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 p-8">
-            <h2 className="text-purple-400 text-5xl font-bold mb-2">LEADERBOARD</h2>
-            <p className="text-white/70 text-lg mb-8">NEFTIT TOP REFEREES</p>
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6">
+            <h2 className="text-purple-400 text-2xl font-bold mb-1">LEADERBOARD</h2>
+            <p className="text-white/70 text-sm mb-6">NEFTIT TOP REFEREES</p>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               {leaderboardData.map((user) => (
                 <div
                   key={user.rank}
-                  className="bg-white/5 border border-white/10 rounded-2xl p-6 flex items-center justify-between hover:bg-white/10 transition-all duration-300"
+                  className="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between hover:bg-white/10 transition-all duration-300"
                 >
-                  <div className="flex items-center space-x-6">
-                    <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">{user.rank}</span>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">{user.rank}</span>
                     </div>
-                    <span className="text-white font-bold text-xl">{user.name}</span>
+                    <span className="text-white font-bold text-base">{user.name}</span>
                   </div>
-                  <span className="text-white font-bold text-2xl">{user.referrals}</span>
+                  <span className="text-white font-bold text-lg">{user.referrals}</span>
                 </div>
               ))}
             </div>
