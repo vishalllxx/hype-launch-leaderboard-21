@@ -7,6 +7,7 @@ import WaitlistCard from "@/components/WaitlistCard";
 import Leaderboard from "@/components/Leaderboard";
 import MainNav from "@/components/MainNav";
 import Footer from "@/components/Footer";
+
 const Index = () => {
   const [completedTasks, setCompletedTasks] = useState({
     email: false,
@@ -28,6 +29,7 @@ const Index = () => {
   const [showWalletInput, setShowWalletInput] = useState(false);
   const [showTwitterInput, setShowTwitterInput] = useState(false);
   const [showDiscordInput, setShowDiscordInput] = useState(false);
+
   const handleTaskComplete = (task: string) => {
     if (task === "email") {
       setShowEmailInput(true);
@@ -130,6 +132,7 @@ const Index = () => {
       });
     }
   };
+
   if (showLeaderboard) {
     return <>
         <MainNav />
@@ -137,6 +140,7 @@ const Index = () => {
         <Footer />
       </>;
   }
+
   return <div className="min-h-screen flex flex-col">
       <MainNav />
       
@@ -153,7 +157,7 @@ const Index = () => {
           {/* Header */}
           <div className="text-center space-y-1 mb-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-wider">
-              JOIN THE WAITLIST
+              NEFTIT JOIN THE WAITLIST
             </h1>
             <p className="text-lg sm:text-xl text-white/90 font-medium">
               for the next level web3 experience
@@ -224,4 +228,5 @@ const Index = () => {
       <Footer />
     </div>;
 };
+
 export default Index;
