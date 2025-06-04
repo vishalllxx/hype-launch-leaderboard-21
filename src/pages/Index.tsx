@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Mail, Twitter } from "lucide-react";
+import { Mail, Twitter, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
@@ -10,11 +10,13 @@ import Leaderboard from "@/components/Leaderboard";
 const Index = () => {
   const [completedTasks, setCompletedTasks] = useState({
     email: false,
+    wallet: false,
     twitter: false,
     discord: false,
   });
   const [showLeaderboard, setShowLeaderboard] = useState(false);
   const [email, setEmail] = useState("");
+  const [walletAddress, setWalletAddress] = useState("");
   const [twitterUsername, setTwitterUsername] = useState("");
   const [discordUsername, setDiscordUsername] = useState("");
   const [userName, setUserName] = useState("");
@@ -23,12 +25,15 @@ const Index = () => {
   
   // States to show input fields
   const [showEmailInput, setShowEmailInput] = useState(false);
+  const [showWalletInput, setShowWalletInput] = useState(false);
   const [showTwitterInput, setShowTwitterInput] = useState(false);
   const [showDiscordInput, setShowDiscordInput] = useState(false);
 
   const handleTaskComplete = (task: string) => {
     if (task === "email") {
       setShowEmailInput(true);
+    } else if (task === "wallet") {
+      setShowWalletInput(true);
     } else if (task === "twitter") {
       // Redirect to Twitter follow link
       window.open("https://twitter.com/intent/follow?screen_name=neftitxyz", "_blank");
@@ -54,6 +59,23 @@ const Index = () => {
     toast({
       title: "Email Submitted!",
       description: "Email task completed successfully.",
+    });
+  };
+
+  const handleWalletSubmit = () => {
+    if (!walletAddress) {
+      toast({
+        title: "Wallet Address Required",
+        description: "Please enter your EVM wallet address.",
+        variant: "destructive",
+      });
+      return;
+    }
+    setCompletedTasks(prev => ({ ...prev, wallet: true }));
+    setShowWalletInput(false);
+    toast({
+      title: "Wallet Address Submitted!",
+      description: "Wallet task completed successfully.",
     });
   };
 
@@ -162,6 +184,34 @@ const Index = () => {
                 className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 rounded-xl font-bold"
               >
                 Submit Email
+              </Button>
+            </div>
+          )}
+
+          <WaitlistCard
+            icon={<Wallet className="h-7 w-7 text-white" />}
+            title="Connect Wallet"
+            description="To Access Web3 Features"
+            isCompleted={completedTasks.wallet}
+            onComplete={() => handleTaskComplete("wallet")}
+            bgColor="bg-purple-600"
+          />
+
+          {/* Wallet Input Field */}
+          {showWalletInput && (
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-4">
+              <Input
+                type="text"
+                placeholder="Enter your EVM wallet address"
+                value={walletAddress}
+                onChange={(e) => setWalletAddress(e.target.value)}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 rounded-xl"
+              />
+              <Button
+                onClick={handleWalletSubmit}
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12 rounded-xl font-bold"
+              >
+                Submit Wallet Address
               </Button>
             </div>
           )}
