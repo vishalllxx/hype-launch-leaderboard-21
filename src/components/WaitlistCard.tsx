@@ -29,6 +29,10 @@ const WaitlistCard = ({
       onClick={onComplete}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      style={{
+        background: `linear-gradient(white/5, white/5) padding-box, linear-gradient(135deg, #5D43EF, #EDAFF0) border-box`,
+        border: '1px solid transparent',
+      }}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-6">
