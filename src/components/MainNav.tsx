@@ -11,14 +11,14 @@ import { Button } from "@/components/ui/button";
 
 const MainNav = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/10 backdrop-blur-sm border-b border-white/10">
+    <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
           <img 
             src="/lovable-uploads/c9853b66-e783-4b56-bc39-9fac0b2296e5.png" 
             alt="NEFTIT" 
-            className="h-8 w-auto"
+            className="h-6 w-auto"
           />
         </div>
 
