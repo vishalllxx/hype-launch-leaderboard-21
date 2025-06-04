@@ -29,6 +29,7 @@ const Index = () => {
   const [showWalletInput, setShowWalletInput] = useState(false);
   const [showTwitterInput, setShowTwitterInput] = useState(false);
   const [showDiscordInput, setShowDiscordInput] = useState(false);
+
   const handleTaskComplete = (task: string) => {
     if (task === "email") {
       setShowEmailInput(true);
@@ -44,6 +45,7 @@ const Index = () => {
       setShowDiscordInput(true);
     }
   };
+
   const handleEmailSubmit = () => {
     if (!email) {
       toast({
@@ -63,6 +65,7 @@ const Index = () => {
       description: "Email task completed successfully."
     });
   };
+
   const handleWalletSubmit = () => {
     if (!walletAddress) {
       toast({
@@ -82,6 +85,7 @@ const Index = () => {
       description: "Wallet task completed successfully."
     });
   };
+
   const handleTwitterSubmit = () => {
     if (!twitterUsername) {
       toast({
@@ -101,6 +105,7 @@ const Index = () => {
       description: "Twitter task completed successfully."
     });
   };
+
   const handleDiscordSubmit = () => {
     if (!discordUsername) {
       toast({
@@ -120,7 +125,9 @@ const Index = () => {
       description: "Discord task completed successfully."
     });
   };
+
   const allTasksCompleted = Object.values(completedTasks).every(Boolean);
+
   const handleEnterNeftit = () => {
     if (allTasksCompleted && email) {
       setUserName(email.split('@')[0].toUpperCase());
@@ -131,6 +138,7 @@ const Index = () => {
       });
     }
   };
+
   if (showLeaderboard) {
     return (
       <div className="min-h-screen w-full">
@@ -140,29 +148,33 @@ const Index = () => {
       </div>
     );
   }
+
   return (
     <div className="min-h-screen w-full flex flex-col">
       <MainNav />
       
-      <div className="flex-1 flex flex-col items-center justify-center px-4 py-6 pt-20 sm:pt-24 relative overflow-hidden" 
+      {/* Main Content */}
+      <div 
+        className="flex-1 flex flex-col items-center justify-center px-4 py-6 pt-20 sm:pt-24 relative overflow-hidden" 
         style={{
           backgroundImage: 'url(/lovable-uploads/1161bd19-0bbb-4e19-ab51-1f508be196c9.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed'
-        }}>
-        
+        }}
+      >
         {/* Background overlay for better readability */}
         <div className="absolute inset-0 bg-black/20 z-0"></div>
         
-        <div className="w-full max-w-md space-y-4 relative z-10">
+        {/* Content Container - Responsive width */}
+        <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl space-y-4 relative z-10">
           {/* Header */}
           <div className="text-center space-y-2 mb-8">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-wider leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wider leading-tight">
               JOIN THE WAITLIST
             </h1>
-            <p className="text-lg sm:text-xl text-white/90 font-medium px-4">
+            <p className="text-lg sm:text-xl lg:text-2xl text-white/90 font-medium px-4">
               for the next level web3 experience
             </p>
           </div>

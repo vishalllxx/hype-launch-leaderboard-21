@@ -56,10 +56,30 @@ html, body {
   color: #888;
 }
 
-/* Ensure proper viewport handling */
+/* Ensure proper viewport handling and background display */
 @media screen and (max-width: 768px) {
   body {
     font-size: 16px;
     -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* Desktop specific improvements */
+@media screen and (min-width: 1024px) {
+  body {
+    background-attachment: fixed;
+  }
+  
+  /* Ensure full viewport coverage */
+  .min-h-screen {
+    min-height: 100vh;
+  }
+}
+
+/* Fix for background image on larger screens */
+@media screen and (min-width: 1200px) {
+  [style*="background-image"] {
+    background-size: cover !important;
+    background-position: center center !important;
   }
 }
