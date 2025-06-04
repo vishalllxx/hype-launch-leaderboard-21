@@ -139,15 +139,18 @@ const Index = () => {
 
   return (
     <div 
-      className="min-h-screen flex flex-col items-center justify-center p-4"
+      className="min-h-screen flex flex-col items-center justify-center p-4 relative"
       style={{
-        backgroundImage: 'url(/lovable-uploads/ee037832-fb9b-4e90-bdcd-5c0eb9cd5b6c.png)',
+        backgroundImage: 'url(/lovable-uploads/1161bd19-0bbb-4e19-ab51-1f508be196c9.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="w-full max-w-lg space-y-6">
+      {/* Background overlay for better readability */}
+      <div className="absolute inset-0 bg-black/20"></div>
+      
+      <div className="w-full max-w-lg space-y-6 relative z-10">
         {/* Header */}
         <div className="text-center space-y-2 mb-12">
           <h1 className="text-6xl md:text-7xl font-bold text-white tracking-wider">
