@@ -23,7 +23,7 @@ const WaitlistCard = ({
 
   return (
     <div
-      className={`relative w-full p-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm cursor-pointer transition-all duration-300 hover:bg-white/10 hover:border-white/20 font-monument ${
+      className={`relative w-full p-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm cursor-pointer transition-all duration-300 hover:bg-white/10 hover:border-white/20 ${
         isCompleted ? "ring-2 ring-green-400" : ""
       }`}
       onClick={onComplete}
@@ -47,8 +47,8 @@ const WaitlistCard = ({
 
           {/* Text Content */}
           <div className="flex-1">
-            <h3 className="text-white font-monument font-black text-base mb-0.5 uppercase tracking-wide">{title}</h3>
-            <p className="text-white/70 text-sm font-monument font-bold uppercase tracking-wide">{description}</p>
+            <h3 className="text-white font-bold text-base mb-0.5">{title}</h3>
+            <p className="text-white/70 text-sm">{description}</p>
           </div>
         </div>
 

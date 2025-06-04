@@ -1,6 +1,3 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -95,10 +92,10 @@
 
 @layer base {
   * {
-    @apply border-border font-monument;
+    @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground font-monument;
+    @apply bg-background text-foreground;
   }
 }

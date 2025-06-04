@@ -46,8 +46,8 @@ const Index = () => {
   const handleEmailSubmit = () => {
     if (!email) {
       toast({
-        title: "EMAIL REQUIRED",
-        description: "PLEASE ENTER YOUR EMAIL ADDRESS.",
+        title: "Email Required",
+        description: "Please enter your email address.",
         variant: "destructive"
       });
       return;
@@ -58,15 +58,15 @@ const Index = () => {
     }));
     setShowEmailInput(false);
     toast({
-      title: "EMAIL SUBMITTED!",
-      description: "EMAIL TASK COMPLETED SUCCESSFULLY."
+      title: "Email Submitted!",
+      description: "Email task completed successfully."
     });
   };
   const handleWalletSubmit = () => {
     if (!walletAddress) {
       toast({
-        title: "WALLET ADDRESS REQUIRED",
-        description: "PLEASE ENTER YOUR EVM WALLET ADDRESS.",
+        title: "Wallet Address Required",
+        description: "Please enter your EVM wallet address.",
         variant: "destructive"
       });
       return;
@@ -77,15 +77,15 @@ const Index = () => {
     }));
     setShowWalletInput(false);
     toast({
-      title: "WALLET ADDRESS SUBMITTED!",
-      description: "WALLET TASK COMPLETED SUCCESSFULLY."
+      title: "Wallet Address Submitted!",
+      description: "Wallet task completed successfully."
     });
   };
   const handleTwitterSubmit = () => {
     if (!twitterUsername) {
       toast({
-        title: "USERNAME REQUIRED",
-        description: "PLEASE ENTER YOUR TWITTER USERNAME.",
+        title: "Username Required",
+        description: "Please enter your Twitter username.",
         variant: "destructive"
       });
       return;
@@ -96,15 +96,15 @@ const Index = () => {
     }));
     setShowTwitterInput(false);
     toast({
-      title: "TWITTER TASK COMPLETED!",
-      description: "TWITTER TASK COMPLETED SUCCESSFULLY."
+      title: "Twitter Task Completed!",
+      description: "Twitter task completed successfully."
     });
   };
   const handleDiscordSubmit = () => {
     if (!discordUsername) {
       toast({
-        title: "USERNAME REQUIRED",
-        description: "PLEASE ENTER YOUR DISCORD USERNAME.",
+        title: "Username Required",
+        description: "Please enter your Discord username.",
         variant: "destructive"
       });
       return;
@@ -115,8 +115,8 @@ const Index = () => {
     }));
     setShowDiscordInput(false);
     toast({
-      title: "DISCORD TASK COMPLETED!",
-      description: "DISCORD TASK COMPLETED SUCCESSFULLY."
+      title: "Discord Task Completed!",
+      description: "Discord task completed successfully."
     });
   };
   const allTasksCompleted = Object.values(completedTasks).every(Boolean);
@@ -125,12 +125,11 @@ const Index = () => {
       setUserName(email.split('@')[0].toUpperCase());
       setShowLeaderboard(true);
       toast({
-        title: "WELCOME TO NEFTIT!",
-        description: "YOU'RE NOW PART OF THE COMMUNITY!"
+        title: "Welcome to NEFTIT!",
+        description: "You're now part of the community!"
       });
     }
   };
-
   if (showLeaderboard) {
     return <>
         <MainNav />
@@ -138,7 +137,7 @@ const Index = () => {
         <Footer />
       </>;
   }
-  return <div className="min-h-screen flex flex-col font-monument">
+  return <div className="min-h-screen flex flex-col">
       <MainNav />
       
       <div className="flex-1 flex flex-col items-center justify-center p-3 pt-16 sm:pt-20 relative" style={{
@@ -153,64 +152,64 @@ const Index = () => {
         <div className="w-full max-w-md space-y-4 relative z-10">
           {/* Header */}
           <div className="text-center space-y-1 mb-6">
-            <h1 className="text-3xl sm:text-4xl text-white tracking-wider font-monument font-black uppercase md:text-6xl text-center">
-              NEFTIT JOIN THE WAITLIST
+            <h1 className="text-3xl sm:text-4xl text-white tracking-wider font-bold md:text-6xl text-center">
+              JOIN THE WAITLIST
             </h1>
-            <p className="text-lg sm:text-xl text-white/90 font-monument font-bold uppercase">
-              FOR THE NEXT LEVEL WEB3 EXPERIENCE
+            <p className="text-lg sm:text-xl text-white/90 font-medium">
+              for the next level web3 experience
             </p>
           </div>
 
           {/* Task Cards */}
           <div className="space-y-3">
-            <WaitlistCard icon={<Mail className="h-5 w-5 text-white" />} title="ENTER EMAIL ADDRESS" description="TO RECEIVE LATEST UPDATES FIRST" isCompleted={completedTasks.email} onComplete={() => handleTaskComplete("email")} bgColor="bg-purple-600" />
+            <WaitlistCard icon={<Mail className="h-5 w-5 text-white" />} title="Enter email address" description="To Receive Latest Updates First" isCompleted={completedTasks.email} onComplete={() => handleTaskComplete("email")} bgColor="bg-purple-600" />
 
             {/* Email Input Field */}
             {showEmailInput && <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-4 space-y-3">
-                <Input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" value={email} onChange={e => setEmail(e.target.value)} className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-10 rounded-lg font-monument font-bold uppercase" />
-                <Button onClick={handleEmailSubmit} className="w-full bg-purple-600 hover:bg-purple-700 text-white h-10 rounded-lg font-monument font-black text-sm uppercase tracking-wider">
-                  SUBMIT EMAIL
+                <Input type="email" placeholder="Enter your email address" value={email} onChange={e => setEmail(e.target.value)} className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-10 rounded-lg" />
+                <Button onClick={handleEmailSubmit} className="w-full bg-purple-600 hover:bg-purple-700 text-white h-10 rounded-lg font-bold text-sm">
+                  Submit Email
                 </Button>
               </div>}
 
-            <WaitlistCard icon={<Wallet className="h-5 w-5 text-white" />} title="ENTER EVM ADDRESS" description="TO ACCESS WEB3 FEATURES" isCompleted={completedTasks.wallet} onComplete={() => handleTaskComplete("wallet")} bgColor="bg-purple-600" />
+            <WaitlistCard icon={<Wallet className="h-5 w-5 text-white" />} title="Enter EVM address" description="To Access Web3 Features" isCompleted={completedTasks.wallet} onComplete={() => handleTaskComplete("wallet")} bgColor="bg-purple-600" />
 
             {/* Wallet Input Field */}
             {showWalletInput && <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-4 space-y-3">
-                <Input type="text" placeholder="ENTER YOUR EVM WALLET ADDRESS" value={walletAddress} onChange={e => setWalletAddress(e.target.value)} className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-10 rounded-lg font-monument font-bold uppercase" />
-                <Button onClick={handleWalletSubmit} className="w-full bg-purple-600 hover:bg-purple-700 text-white h-10 rounded-lg font-monument font-black text-sm uppercase tracking-wider">
-                  SUBMIT WALLET ADDRESS
+                <Input type="text" placeholder="Enter your EVM wallet address" value={walletAddress} onChange={e => setWalletAddress(e.target.value)} className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-10 rounded-lg" />
+                <Button onClick={handleWalletSubmit} className="w-full bg-purple-600 hover:bg-purple-700 text-white h-10 rounded-lg font-bold text-sm">
+                  Submit Wallet Address
                 </Button>
               </div>}
 
             <WaitlistCard icon={<svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>} title="FOLLOW US ON X" description="TO STAY UPDATED ON LATEST NEWS" isCompleted={completedTasks.twitter} onComplete={() => handleTaskComplete("twitter")} bgColor="bg-purple-600" />
+                </svg>} title="Follow Us On" description="To Stay Updated On Latest News" isCompleted={completedTasks.twitter} onComplete={() => handleTaskComplete("twitter")} bgColor="bg-purple-600" />
 
             {/* Twitter Input Field */}
             {showTwitterInput && <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-4 space-y-3">
-                <Input type="text" placeholder="ENTER YOUR TWITTER USERNAME" value={twitterUsername} onChange={e => setTwitterUsername(e.target.value)} className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-10 rounded-lg font-monument font-bold uppercase" />
-                <Button onClick={handleTwitterSubmit} className="w-full bg-purple-600 hover:bg-purple-700 text-white h-10 rounded-lg font-monument font-black text-sm uppercase tracking-wider">
-                  SUBMIT TWITTER USERNAME
+                <Input type="text" placeholder="Enter your Twitter username" value={twitterUsername} onChange={e => setTwitterUsername(e.target.value)} className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-10 rounded-lg" />
+                <Button onClick={handleTwitterSubmit} className="w-full bg-purple-600 hover:bg-purple-700 text-white h-10 rounded-lg font-bold text-sm">
+                  Submit Twitter Username
                 </Button>
               </div>}
 
             <WaitlistCard icon={<svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
-                </svg>} title="JOIN OUR DISCORD" description="JOIN & BECOME A PART OF OUR COMMUNITY" isCompleted={completedTasks.discord} onComplete={() => handleTaskComplete("discord")} bgColor="bg-purple-600" />
+                </svg>} title="Join Our Discord" description="Join & Become A Part Of our Community" isCompleted={completedTasks.discord} onComplete={() => handleTaskComplete("discord")} bgColor="bg-purple-600" />
 
             {/* Discord Input Field */}
             {showDiscordInput && <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-4 space-y-3">
-                <Input type="text" placeholder="ENTER YOUR DISCORD USERNAME" value={discordUsername} onChange={e => setDiscordUsername(e.target.value)} className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-10 rounded-lg font-monument font-bold uppercase" />
-                <Button onClick={handleDiscordSubmit} className="w-full bg-purple-600 hover:bg-purple-700 text-white h-10 rounded-lg font-monument font-black text-sm uppercase tracking-wider">
-                  SUBMIT DISCORD USERNAME
+                <Input type="text" placeholder="Enter your Discord username" value={discordUsername} onChange={e => setDiscordUsername(e.target.value)} className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-10 rounded-lg" />
+                <Button onClick={handleDiscordSubmit} className="w-full bg-purple-600 hover:bg-purple-700 text-white h-10 rounded-lg font-bold text-sm">
+                  Submit Discord Username
                 </Button>
               </div>}
           </div>
 
           {/* Enter Button */}
           <div className="pt-6">
-            <Button onClick={handleEnterNeftit} disabled={!allTasksCompleted} className={`w-full h-12 rounded-xl text-base font-monument font-black tracking-wider transition-all duration-300 uppercase ${allTasksCompleted ? "bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white border border-purple-500" : "bg-gray-700/50 text-gray-400 cursor-not-allowed border border-gray-600"}`}>
+            <Button onClick={handleEnterNeftit} disabled={!allTasksCompleted} className={`w-full h-12 rounded-xl text-base font-bold tracking-wider transition-all duration-300 ${allTasksCompleted ? "bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white border border-purple-500" : "bg-gray-700/50 text-gray-400 cursor-not-allowed border border-gray-600"}`}>
               ENTER NEFTIT →
             </Button>
           </div>
